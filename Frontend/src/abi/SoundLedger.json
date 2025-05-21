@@ -1,0 +1,64 @@
+[
+  {
+    "inputs": [
+      { "internalType": "string", "name": "title", "type": "string" },
+      { "internalType": "string", "name": "artist", "type": "string" },
+      { "internalType": "string", "name": "genre", "type": "string" },
+      { "internalType": "string", "name": "releaseDate", "type": "string" },
+      { "internalType": "string", "name": "ipfsHash", "type": "string" }
+    ],
+    "name": "registerSong",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "string", "name": "ipfsHash", "type": "string" }
+    ],
+    "name": "getSongOwner",
+    "outputs": [
+      { "internalType": "address", "name": "", "type": "address" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "string", "name": "ipfsHash", "type": "string" }
+    ],
+    "name": "getSongMetadata",
+    "outputs": [
+      { "internalType": "string", "name": "", "type": "string" },
+      { "internalType": "string", "name": "", "type": "string" },
+      { "internalType": "string", "name": "", "type": "string" },
+      { "internalType": "string", "name": "", "type": "string" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "artist", "type": "address" }
+    ],
+    "name": "getSongsByArtist",
+    "outputs": [
+      { "internalType": "string[]", "name": "", "type": "string[]" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "internalType": "address", "name": "owner", "type": "address" },
+      { "indexed": false, "internalType": "string", "name": "title", "type": "string" },
+      { "indexed": false, "internalType": "string", "name": "artist", "type": "string" },
+      { "indexed": false, "internalType": "string", "name": "genre", "type": "string" },
+      { "indexed": false, "internalType": "string", "name": "releaseDate", "type": "string" },
+      { "indexed": false, "internalType": "string", "name": "ipfsHash", "type": "string" }
+    ],
+    "name": "SongRegistered",
+    "type": "event"
+  }
+]
