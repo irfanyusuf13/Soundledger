@@ -2,5 +2,10 @@
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
     "hardhat": "^2.22.19"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "hbs": "^4.2.0",
+    "mongoose": "^8.15.0"
   }
 }
