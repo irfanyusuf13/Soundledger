@@ -4,9 +4,7 @@ async function main() {
   const SoundLedger = await hre.ethers.getContractFactory("SoundLedger");
   const soundLedger = await SoundLedger.deploy();
 
- await soundLedger.waitForDeployment();
-
-  console.log(`SoundLedger deployed to: ${soundLedger.address}`);
+  console.log("SoundLedger deployed to:", soundLedger.target);
 }
 
 main().catch((error) => {
