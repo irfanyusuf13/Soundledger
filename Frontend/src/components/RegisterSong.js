@@ -39,24 +39,61 @@ const RegisterSong = ({ contract, setUserSongs }) => {
   };
 
   return (
-    <section>
-      <h2>🎶 Register Song</h2>
-      {[{ label: "Title", val: title, set: setTitle },
-        { label: "Artist", val: artist, set: setArtist },
-        { label: "Genre", val: genre, set: setGenre }].map((f, i) => (
-        <input key={i} placeholder={f.label} value={f.val}
-          onChange={(e) => f.set(e.target.value)} disabled={loading}
-          style={{ width: "100%", padding: 10, marginBottom: 10, borderRadius: 6 }} />
-      ))}
-      <input type="date" value={releaseDate} onChange={e => setReleaseDate(e.target.value)}
-        disabled={loading} style={{ width: "100%", padding: 10, marginBottom: 10, borderRadius: 6 }} />
-      <input type="file" accept=".mp3" onChange={(e) => setMp3File(e.target.files[0])}
-        disabled={loading} style={{ marginBottom: 16 }} />
-      <button onClick={registerSong} disabled={loading}
-        style={{ padding: '10px 24px', borderRadius: 6, backgroundColor: '#4f46e5', color: '#fff', fontWeight: 'bold' }}>
-        {loading ? "Registering..." : "Register"}
-      </button>
-      {registeredHash && <p style={{ marginTop: 12, color: "green" }}>✅ IPFS: <code>{registeredHash}</code></p>}
+    <section className="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+      <h2 className="text-2xl font-bold mb-6 text-gray-800">🎶 Register Song</h2>
+      
+      <div className="space-y-4">
+        {[{ label: "Title", val: title, set: setTitle },
+          { label: "Artist", val: artist, set: setArtist },
+          { label: "Genre", val: genre, set: setGenre }].map((f, i) => (
+          <input 
+            key={i} 
+            placeholder={f.label} 
+            value={f.val}
+            onChange={(e) => f.set(e.target.value)} 
+            disabled={loading}
+            className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors disabled:bg-gray-100 disabled:text-gray-500"
+          />
+        ))}
+        
+        <input 
+          type="date" 
+          value={releaseDate} 
+          onChange={e => setReleaseDate(e.target.value)}
+          disabled={loading} 
+          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors disabled:bg-gray-100 disabled:text-gray-500"
+        />
+        
+        <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 hover:border-blue-400 transition-colors">
+          <input 
+            type="file" 
+            accept=".mp3" 
+            onChange={(e) => setMp3File(e.target.files[0])}
+            disabled={loading} 
+            className="w-full text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 file:cursor-pointer cursor-pointer"
+          />
+          <p className="text-sm text-gray-500 mt-2">📁 Choose MP3 file to upload</p>
+        </div>
+        
+        <button 
+          onClick={registerSong} 
+          disabled={loading}
+          className="w-full py-3 px-6 bg-indigo-600 hover:bg-indigo-700 disabled:bg-gray-400 text-white font-bold rounded-lg transition-colors shadow-md hover:shadow-lg disabled:cursor-not-allowed"
+        >
+          {loading ? "🔄 Registering..." : "📝 Register Song"}
+        </button>
+        
+        {registeredHash && (
+          <div className="mt-4 p-4 bg-green-50 border-2 border-green-200 rounded-lg">
+            <p className="text-green-800 font-medium">
+              ✅ Successfully registered! 
+            </p>
+            <p className="text-sm text-green-700 mt-1">
+              🔗 IPFS Hash: <code className="bg-green-100 px-2 py-1 rounded text-xs">{registeredHash}</code>
+            </p>
+          </div>
+        )}
+      </div>
     </section>
   );
 };
