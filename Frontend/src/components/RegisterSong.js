@@ -40,7 +40,7 @@ const RegisterSong = ({ contract, setUserSongs }) => {
 
   return (
     <section>
-      <h2>🎶 Register Song</h2>
+      <h2>Register Song</h2>
       {[{ label: "Title", val: title, set: setTitle },
         { label: "Artist", val: artist, set: setArtist },
         { label: "Genre", val: genre, set: setGenre }].map((f, i) => (

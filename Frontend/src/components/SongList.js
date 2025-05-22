@@ -12,9 +12,9 @@ const SongList = ({ songs, setPlayHash }) => (
             borderRadius: 8,
             boxShadow: '0 1px 4px rgba(0,0,0,0.1)'
           }}>
-            <p><strong>🎵 {song.title}</strong> by {song.artist}</p>
-            <p>📁 Genre: {song.genre} | 📅 Released: {song.releaseDate}</p>
-            <p>🔗 IPFS: <code>{song.ipfsHash}</code></p>
+            <p><strong> {song.title}</strong> by {song.artist}</p>
+            <p> Genre: {song.genre} |  Released: {song.releaseDate}</p>
+            <p> IPFS: <code>{song.ipfsHash}</code></p>
             <button onClick={() => setPlayHash(song.ipfsHash)}
               style={{ marginTop: 6, padding: '6px 16px', backgroundColor: '#3b82f6', color: 'white', border: 'none', borderRadius: 6 }}>
               ▶️ Play

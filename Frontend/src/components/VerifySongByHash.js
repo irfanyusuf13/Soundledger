@@ -33,7 +33,7 @@ const VerifySongByHash = ({ contract }) => {
 
   return (
     <section>
-      <h2>🔍 Cari Lagu Berdasarkan IPFS Hash</h2>
+      <h2>Cari Lagu Berdasarkan IPFS Hash</h2>
       <input
         type="text"
         placeholder="Masukkan IPFS Hash"

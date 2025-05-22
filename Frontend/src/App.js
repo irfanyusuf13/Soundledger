@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div style={{ padding: 30, maxWidth: 800, margin: 'auto' }}>
-      <h1 style={{ color: '#4f46e5' }}>🎵 Sound Ledger</h1>
+      <h1 style={{ color: '#4f46e5' }}> Sound Ledger</h1>
       <p><strong>Connected as:</strong> <span style={{ color: '#1e3a8a' }}>{account || "Not connected"}</span></p>
       <RegisterSong contract={contract} setUserSongs={setUserSongs} />
       <VerifyArtist contract={contract} />

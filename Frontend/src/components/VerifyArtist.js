@@ -33,7 +33,7 @@ const VerifyArtist = ({ contract }) => {
 
   return (
     <section>
-      <h2>🎤 Verify Artist</h2>
+      <h2>Verify Artist</h2>
       <input
         type="text"
         placeholder="Enter IPFS Hash"

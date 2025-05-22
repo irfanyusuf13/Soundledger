@@ -1,6 +1,6 @@
 const PlayByHash = ({ playHash, setPlayHash }) => (
   <section>
-    <h2>🎼 Play from IPFS</h2>
+    <h2>Play from IPFS</h2>
     <input
       type="text"
       placeholder="Enter IPFS hash to play"
