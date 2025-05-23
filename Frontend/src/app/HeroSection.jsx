@@ -1,32 +1,51 @@
-export default function HeroSection() {
+import { Link } from "react-router-dom";
+import React from "react";
+
+const HeroSection = () => {
   return (
-    <div className="w-screen h-screen bg-blue-600 relative">
-      {/* Overlay gelap transparan */}
-      <div className="absolute inset-0 bg-black bg-opacity-30" />
+    <div 
+      className="w-screen h-screen relative bg-cover bg-center"
+      style={{ backgroundImage: `url('/assets/bg.jpg')` }}
+    >
+      {/* Background overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-50" />
       
-      {/* Konten */}
       <div className="relative z-10 flex flex-col justify-center items-center text-white text-center h-full max-w-4xl px-4 mx-auto">
-        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-indigo-200">
-          Welcome to Sound Ledger
+        {/* Judul */}
+        <h1 className="text-[80px] font-bold text-indigo-200 mb-4">
+          <span className="block bg-gradient-to-r from-blue-600 to-blue-300 text-transparent bg-clip-text">Protect Your Music</span>
+          <span className="block">Sound Ledger</span>
         </h1>
-        <p className="text-sm md:text-base mt-4">
+        
+        {/* Deskripsi */}
+        <p className="text-[30px] max-w-[800px]">
           A decentralized music platform where artists can register their songs
           and listeners can verify and play them.
         </p>
 
-        <div className="mt-6 text-left">
-          <p className="font-semibold text-lg">Features:</p>
-          <ul className="list-disc list-inside mt-2 text-sm md:text-base">
-            <li>Register your songs on the blockchain</li>
-            <li>Verify the authenticity of songs</li>
-            <li>Play songs directly from IPFS</li>
-          </ul>
+        {/* Tombol */}
+        <div className="mt-8 flex gap-4">
+          <Link 
+            to="/register" 
+            className="bg-blue-800 hover:bg-blue-600 text-white px-6 py-2 rounded-lg transition-colors"
+          >
+            Register Music
+          </Link>
+          <Link 
+            to="/verify" 
+            className="bg-transparent border border-indigo-300 hover:bg-white/10 text-white px-6 py-2 rounded-lg transition-colors"
+          >
+            Verify License
+          </Link>
         </div>
 
-        <p className="italic mt-6 text-sm md:text-base">
+        {/* Footer text */}
+        <p className="italic mt-8 text-sm md:text-base">
           Join us in revolutionizing the music industry!
         </p>
       </div>
     </div>
   );
-}
+};
+
+export default HeroSection;
