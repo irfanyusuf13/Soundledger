@@ -1,0 +1,12 @@
+.navbar-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.navbar-hide {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+.navbar-scrolled {
+  opacity: 1;
+  transform: translateY(0);
+}
